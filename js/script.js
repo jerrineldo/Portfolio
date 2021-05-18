@@ -36,19 +36,25 @@ $(document).ready(function () {
     );
   });
 
+  
+
   function validateEmail(email) {
     var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
     return email_regex.test(email);
   }
 
-  var email = document.getElementById("contact-section_email").value;
-  var name = document.getElementById("contact-section_name");
-  var subject = document.getElementById("contact-section_subject");
-  var message = document.getElementById("contact-section_message");
+  var formhandle = document.forms.contactform;
 
-  if(!validateEmail(email)){
+  function processForm() {
+    var email = document.getElementById("contactsection_email");
+    var name = document.getElementById("contactsection_name");
+    var subject = document.getElementById("contactsection_subject");
+    var message = document.getElementById("contactsection_message");
+    if (!validateEmail(email.value)) {
+        email.className = 'form-control invalid';
       return false;
+    }
   }
+
+  formhandle.onsubmit = processForm;
 });
-
-

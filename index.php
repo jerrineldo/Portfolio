@@ -3,8 +3,8 @@
 
 if(isset($_POST['sendmessage_button'])){
 
-  $email = htmlspecialchars($_POST['contact-section_email']);
-  $name =  htmlspecialchars($_POST['contact-section_name']);
+  $email = htmlspecialchars($_POST['contactsection_email']);
+  $name =  htmlspecialchars($_POST['contactsection_name']);
   $subject = htmlspecialchars($_POST['contact-section_subject']);
   $message = htmlspecialchars($_POST['contact-section_message']);
 
@@ -39,6 +39,7 @@ if(isset($_POST['sendmessage_button'])){
       crossorigin="anonymous"
     />
     <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script src="js/typed.js-master/typed.js-master/lib/typed.min.js"></script>
     <title>Document</title>
@@ -406,6 +407,8 @@ if(isset($_POST['sendmessage_button'])){
             method="POST"
             action="index.php"
             class="needs-validation"
+            name="contactform"
+            id="contactform"
             novalidate
           >
             <div class="form-row">
@@ -415,9 +418,9 @@ if(isset($_POST['sendmessage_button'])){
                   class="form-control"
                   id="contact-section_email"
                   placeholder="Email*"
-                  name="contact-section_email"
+                  name="contactsection_email"
                   required
-                  value="<?php echo isset($_POST['contact-section_email'])?$_POST['contact-section_email']:''; ?>"
+                  value="<?php echo isset($_POST['contactsection_email'])?$_POST['contactsection_email']:''; ?>"
                 />
                 <div class="invalid-feedback">Please enter a valid email.</div>
               </div>
@@ -425,11 +428,11 @@ if(isset($_POST['sendmessage_button'])){
                 <input
                   type="text"
                   class="form-control"
-                  id="contact-section_name"
+                  id="contactsection_name"
                   placeholder="Your Name*"
-                  name="contact-section_name"
+                  name="contactsection_name"
                   required
-                  value="<?php echo isset($_POST['contact-section_name'])?$_POST['contact-section_name']:''; ?>"
+                  value="<?php echo isset($_POST['contactsection_name'])?$_POST['contactsection_name']:''; ?>"
                 />
                 <div class="invalid-feedback">Please enter a valid name.</div>
               </div>
