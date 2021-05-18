@@ -1,3 +1,24 @@
+
+<?php
+
+if(isset($_POST['sendmessage_button'])){
+
+  $email = htmlspecialchars($_POST['contact-section_email']);
+  $name =  htmlspecialchars($_POST['contact-section_name']);
+  $subject = htmlspecialchars($_POST['contact-section_subject']);
+  $message = htmlspecialchars($_POST['contact-section_message']);
+
+  $tomailaddress = "jerrineldo.mp@gmail.com";
+  $messagebody = "";
+  $messagebody .="From: ".$name. "\r\n";
+  $messagebody .="Email: ".$email. "\r\n";
+  $messagebody .="Subject: ".$subject. "\r\n";
+  $messagebody .="Message: ".$message. "\r\n";
+
+  mail($tomailaddress,$subject,$messagebody);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,7 +68,7 @@
             <a class="nav-item nav-link" href="#skill-section">Skills</a>
             <a class="nav-item nav-link" href="#projects-section">Projects</a>
             <a class="nav-item nav-link" href="#">Education</a>
-            <a class="nav-item nav-link" href="#">Contact</a>
+            <a class="nav-item nav-link" href="#contact-section">Contact</a>
             <a class="nav-item nav-link" href="#">Resume</a>
           </div>
         </div>
@@ -317,38 +338,138 @@
       >
         <div class="jumbotron my-auto set-width">
           <div class="sectionhead">
-            <span><hr/>CHECK OUT MY</span>
+            <hr />
+            <span>CHECK OUT MY</span>
             <h2>Skills</h2>
           </div>
           <ul class="skillsgrid">
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/ultraviolet/40/000000/html-filetype.png"/></div>
+              <div class="skillcontainer">
+                <img
+                  src="https://img.icons8.com/ultraviolet/40/000000/html-filetype.png"
+                />
+              </div>
               <p>HTML</p>
             </li>
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/ultraviolet/40/000000/css-filetype.png"/></div>
+              <div class="skillcontainer">
+                <img
+                  src="https://img.icons8.com/ultraviolet/40/000000/css-filetype.png"
+                />
+              </div>
               <p>CSS</p>
             </li>
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/nolan/64/javascript.png"/></div>
+              <div class="skillcontainer">
+                <img src="https://img.icons8.com/nolan/64/javascript.png" />
+              </div>
               <p>JavaScript</p>
             </li>
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/ios-filled/50/000000/jquery.png"/></i></div>
+              <div class="skillcontainer">
+                <img
+                  src="https://img.icons8.com/ios-filled/50/000000/jquery.png"
+                />
+              </div>
               <p>Jquery</p>
             </li>
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/fluent/48/000000/visual-studio-code-2019.png"/></div>
+              <div class="skillcontainer">
+                <img
+                  src="https://img.icons8.com/fluent/48/000000/visual-studio-code-2019.png"
+                />
+              </div>
               <p>VS Code</p>
             </li>
             <li>
-              <div class="skillcontainer"><img src="https://img.icons8.com/cute-clipart/64/000000/github.png"/></div>
+              <div class="skillcontainer">
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/github.png"
+                />
+              </div>
               <p>GitHub</p>
             </li>
           </ul>
         </div>
       </div>
       <!-- End of Skill Section -->
+      <!-- Contact Section -->
+      <div
+        class="contact-section section d-flex justify-content-center"
+        id="contact-section"
+      >
+        <div class="jumbotron my-auto set-width">
+          <div class="sectionhead">
+            <h2>Send a Message</h2>
+          </div>
+          <form
+            method="POST"
+            action="index.php"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contact-section_email"
+                  placeholder="Email*"
+                  name="contact-section_email"
+                  required
+                  value="<?php echo isset($_POST['contact-section_email'])?$_POST['contact-section_email']:''; ?>"
+                />
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+              <div class="form-group col-md-6">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contact-section_name"
+                  placeholder="Your Name*"
+                  name="contact-section_name"
+                  required
+                  value="<?php echo isset($_POST['contact-section_name'])?$_POST['contact-section_name']:''; ?>"
+                />
+                <div class="invalid-feedback">Please enter a valid name.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                id="contact-section_subject"
+                placeholder="Subject*"
+                name="contact-section_subject"
+                required
+                value="<?php echo isset($_POST['contact-section_subject'])?$_POST['contact-section_subject']:''; ?>"
+              />
+              <div class="invalid-feedback">Please enter a valid subject.</div>
+            </div>
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                id="contact-section_message"
+                placeholder="Your Message*"
+                rows="3"
+                name="contact-section_message"
+                required
+              >
+<?php echo isset($_POST['contact-section_message'])?$_POST['contact-section_message']:''; ?></textarea
+              >
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+            <button
+              name="sendmessage_button"
+              type="submit"
+              class="btn btn-primary"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- End of Contact Section -->
     </div>
   </body>
 </html>

@@ -7,9 +7,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.main-container {
-}
-
 .home-section {
   background: url(../images/Background.jpg);
   height: 700px;
@@ -62,7 +59,9 @@ html {
 }
 
 .text-slider-items {
-  display: none;
+  display:none;
+  color: white;
+  
 }
 
 .section {
