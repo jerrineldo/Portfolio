@@ -1,21 +1,23 @@
 
 <?php
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+require_once("./Library/SendEmail.php");
+
+$message_sent = false;
+
 if(isset($_POST['sendmessage_button'])){
 
   $email = htmlspecialchars($_POST['contactsection_email']);
   $name =  htmlspecialchars($_POST['contactsection_name']);
-  $subject = htmlspecialchars($_POST['contact-section_subject']);
-  $message = htmlspecialchars($_POST['contact-section_message']);
+  $subject = htmlspecialchars($_POST['contactsection_subject']);
+  $message = htmlspecialchars($_POST['contactsection_message']);
+  send_email("jerrineldo.mp@gmail.com",$name, $subject , $email, $message);
+  $message_sent = true;
 
-  $tomailaddress = "jerrineldo.mp@gmail.com";
-  $messagebody = "";
-  $messagebody .="From: ".$name. "\r\n";
-  $messagebody .="Email: ".$email. "\r\n";
-  $messagebody .="Subject: ".$subject. "\r\n";
-  $messagebody .="Message: ".$message. "\r\n";
-
-  mail($tomailaddress,$subject,$messagebody);
 }
 
 ?>
@@ -403,9 +405,11 @@ if(isset($_POST['sendmessage_button'])){
           <div class="sectionhead">
             <h2>Send a Message</h2>
           </div>
+          <?php if($message_sent) { ?>
+            <h4 class="sent-notification">Thanks, I will get in touch</h4>
+          <?php }else {?>
           <form
             method="POST"
-            action="index.php"
             class="needs-validation"
             name="contactform"
             id="contactform"
@@ -416,7 +420,7 @@ if(isset($_POST['sendmessage_button'])){
                 <input
                   type="text"
                   class="form-control"
-                  id="contact-section_email"
+                  id="contactsection_email"
                   placeholder="Email*"
                   name="contactsection_email"
                   required
@@ -441,24 +445,24 @@ if(isset($_POST['sendmessage_button'])){
               <input
                 type="text"
                 class="form-control"
-                id="contact-section_subject"
+                id="contactsection_subject"
                 placeholder="Subject*"
-                name="contact-section_subject"
+                name="contactsection_subject"
                 required
-                value="<?php echo isset($_POST['contact-section_subject'])?$_POST['contact-section_subject']:''; ?>"
+                value="<?php echo isset($_POST['contactsection_subject'])?$_POST['contactsection_subject']:''; ?>"
               />
               <div class="invalid-feedback">Please enter a valid subject.</div>
             </div>
             <div class="form-group">
               <textarea
                 class="form-control"
-                id="contact-section_message"
+                id="contactsection_message"
                 placeholder="Your Message*"
                 rows="3"
-                name="contact-section_message"
+                name="contactsection_message"
                 required
               >
-<?php echo isset($_POST['contact-section_message'])?$_POST['contact-section_message']:''; ?></textarea
+<?php echo isset($_POST['contactsection_message'])?$_POST['contactsection_message']:''; ?></textarea
               >
               <div class="invalid-feedback">Please enter a message.</div>
             </div>
@@ -470,6 +474,7 @@ if(isset($_POST['sendmessage_button'])){
               Send
             </button>
           </form>
+          <?php } ?>
         </div>
       </div>
       <!-- End of Contact Section -->

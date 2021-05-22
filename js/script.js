@@ -51,8 +51,32 @@ $(document).ready(function () {
     var subject = document.getElementById("contactsection_subject");
     var message = document.getElementById("contactsection_message");
     if (!validateEmail(email.value)) {
-        email.className = 'form-control invalid';
-      return false;
+        email.classList.add("active");
+        $("#contactsection_email").next().css("display", "block");
+        $("#contactsection_email").css('border-color', 'red');
+        console.log("Jerrin");
+        return false;
+    } 
+    else{
+      // alert("Hi");
+      // $.ajax({
+        
+      //   url: 'sendEmail.php',
+      //   type: 'POST',
+      //   datatype: 'json',
+      //   data :{
+      //     name: name.value,
+      //     email: email.value,
+      //     subject: subject.value,
+      //     message: message.value
+      //   }, success: function(response){
+      //     alert("Hicdac");
+      //     $('#contactform')[0].reset();
+      //     $(".sent-notification").text("Message sent sucessfully");
+      //   }
+        
+      // });
+      // alert("Here");
     }
   }
 

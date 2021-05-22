@@ -1,0 +1,10 @@
+{
+    "autoload": {
+      "psr-4" : {
+        "Portfolio\\Library\\" : "Library/"
+      }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.4"
+    }
+}
