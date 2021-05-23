@@ -22,6 +22,7 @@ html {
 
 .custom-nav {
   background-color: black !important;
+  width: 100% !important;
 }
 
 .nav-link {

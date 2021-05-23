@@ -70,9 +70,8 @@ if(isset($_POST['sendmessage_button'])){
             <a class="nav-item nav-link" href="#about-section">About</a>
             <a class="nav-item nav-link" href="#skill-section">Skills</a>
             <a class="nav-item nav-link" href="#projects-section">Projects</a>
-            <a class="nav-item nav-link" href="#">Education</a>
             <a class="nav-item nav-link" href="#contact-section">Contact</a>
-            <a class="nav-item nav-link" href="#">Resume</a>
+            <a class="nav-item nav-link" href="#resume-section">Resume</a>
           </div>
         </div>
       </nav>
@@ -478,6 +477,14 @@ if(isset($_POST['sendmessage_button'])){
         </div>
       </div>
       <!-- End of Contact Section -->
+      <!-- Resume Section -->
+      <div
+        class="resume-section section d-flex justify-content-center"
+        id="resume-section"
+      >
+        <embed src="JerrinResume.pdf" width="1000px" height="2100px" />
+      </div>
+      <!-- End of Contact section -->
       <!-- Footer -->
       <footer class="page-footer font-small unique-color-dark pt-2">
       <!-- Footer Elements -->
