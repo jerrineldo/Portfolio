@@ -44,7 +44,7 @@ if(isset($_POST['sendmessage_button'])){
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script src="js/typed.js-master/typed.js-master/lib/typed.min.js"></script>
-    <title>Document</title>
+    <title>Jerrin - Web Developer</title>
   </head>
   <body>
     <div class="main-container">
