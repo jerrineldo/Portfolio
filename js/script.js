@@ -36,8 +36,6 @@ $(document).ready(function () {
     );
   });
 
-  
-
   function validateEmail(email) {
     var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
     return email_regex.test(email);
@@ -51,16 +49,15 @@ $(document).ready(function () {
     var subject = document.getElementById("contactsection_subject");
     var message = document.getElementById("contactsection_message");
     if (!validateEmail(email.value)) {
-        email.classList.add("active");
-        $("#contactsection_email").next().css("display", "block");
-        $("#contactsection_email").css('border-color', 'red');
-        console.log("Jerrin");
-        return false;
-    } 
-    else{
+      email.classList.add("active");
+      $("#contactsection_email").next().css("display", "block");
+      $("#contactsection_email").css("border-color", "red");
+      console.log("Jerrin");
+      return false;
+    } else {
       // alert("Hi");
       // $.ajax({
-        
+
       //   url: 'sendEmail.php',
       //   type: 'POST',
       //   datatype: 'json',
@@ -74,9 +71,11 @@ $(document).ready(function () {
       //     $('#contactform')[0].reset();
       //     $(".sent-notification").text("Message sent sucessfully");
       //   }
-        
+
       // });
       // alert("Here");
+      $("#contactsection_email").next().hide();
+      $("#contactsection_email").css("border-color", "green");
     }
   }
 
