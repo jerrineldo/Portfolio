@@ -122,10 +122,10 @@ html {
 
 .socialsList {
   display: inline-block;
-  top: 391px;
+  top:20em;
   position: absolute;
   display: inline-block;
-  left: 50px;
+  right: 50px;
   width: 250px;
 }
 .socialsList li {
