@@ -33,6 +33,7 @@ if (isset($_POST['sendmessage_button'])) {
   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
   <script src="js/typed.js-master/typed.js-master/lib/typed.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title>Jerrin - Web Developer</title>
 </head>
 
@@ -64,7 +65,7 @@ if (isset($_POST['sendmessage_button'])) {
           <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
         </li>
         <li>
-          <a href="https://github.com/jerrineldo" class ="icon" target="_blank" rel="noopener noreferrer"><img class ="icon" src="./images/icons/github.svg"/></a>
+          <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
         </li>
       </ul>
     </div>
@@ -106,13 +107,14 @@ if (isset($_POST['sendmessage_button'])) {
               project-card
             ">
           <div class="card-horizontal">
-            <img class="card-img float-left project-image" src="./images/TimeMatters-Logo.jpg" alt="Card image cap" />
+            <div class="workimagecontainer">
+              <img class="card-img float-left project-image" src="./images/TimeMatters-Logo.jpg" alt="Card image cap" />
+            </div>
             <div class="card-body">
-              <h5 class="card-title">Time Matters</h5>
-              <p class="card-text"></p>
+              <h5 class="card-title">TIME MATTERS</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : Clarion, SQL, C#
+                  Technologies Used : <span class="technologies">Clarion , SQL , C#</span>
                 </li>
                 <li class="list-group-item">
                   Time Matters is a leading law practice management software,
@@ -141,14 +143,16 @@ if (isset($_POST['sendmessage_button'])) {
               project-card
             ">
           <div class="card-horizontal">
-            <img class="card-img float-left project-image" src="./images/Cognizant-Logo.jpg" alt="Card image cap" />
+            <div class="workimagecontainer">
+              <img class="card-img float-left project-image" src="./images/Cognizant-Logo.jpg" alt="Card image cap" />
+            </div>
             <div class="card-body">
               <h5 class="card-title">Web Applications</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : HTML,CSS, Ajax, JavaScript, JQuery, C#,
-                  MVC.NET , SQL
+                  Technologies Used : <span class="technologies">HTML , CSS , Ajax , JavaScript , JQuery , C# ,
+                    MVC.NET , SQL</span>
                 </li>
                 <li class="list-group-item">
                   Application were used by our company's internal employees
@@ -167,13 +171,44 @@ if (isset($_POST['sendmessage_button'])) {
               project-card
             ">
           <div class="card-horizontal">
-            <img class="card-img float-left project-image" src="./images/Restaurant-Website.png" alt="Card image cap" />
+            <div class=" mt-3 workimagecontainer">
+              <div id="RestaurantWebsite" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#RestaurantWebsite" data-slide-to="0" class="active"></li>
+                  <li data-target="#RestaurantWebsite" data-slide-to="1"></li>
+                  <li data-target="#RestaurantWebsite" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/RestaurantAroma/AromaHomePage.png" class="project-image" alt="AromaRestaurant-HomePage">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/RestaurantAroma/LocationPage.png" class="project-image" alt="AromaRestaurant-LocationPage">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/RestaurantAroma/GamePage.png" class="project-image" alt="ChooperForce-GamePage">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#RestaurantWebsite" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#RestaurantWebsite" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
             <div class="card-body">
               <h5 class="card-title">Restaurant Website</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : HTML, CSS, JQuery, JavaScript
+                  Technologies Used : <span class="technologies">HTML , CSS , JQuery , JavaScript</span>
                 </li>
                 <li class="list-group-item">
                   Worked with a team to develop a restaurant Website from
@@ -186,6 +221,7 @@ if (isset($_POST['sendmessage_button'])) {
                 </li>
               </ul>
               <div class="card-body">
+                <a href="https://aromarestaurant.herokuapp.com/" class="card-link">Live</a>
                 <a href="https://github.com/jerrineldo/RestaurantProject" class="card-link">Github</a>
               </div>
             </div>
@@ -201,15 +237,63 @@ if (isset($_POST['sendmessage_button'])) {
               project-card
             ">
           <div class="card-horizontal">
-            <img class="card-img float-left project-image" src="./images/HospitalProject.png" alt="Card image cap" />
+            <div class=" mt-3 workimagecontainer">
+              <div id="HospitalProject" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#HospitalProject" data-slide-to="0" class="active"></li>
+                  <li data-target="#HospitalProject" data-slide-to="1"></li>
+                  <li data-target="#HospitalProject" data-slide-to="2"></li>
+                  <li data-target="#HospitalProject" data-slide-to="3"></li>
+                  <li data-target="#HospitalProject" data-slide-to="4"></li>
+                  <li data-target="#HospitalProject" data-slide-to="5"></li>
+                  <li data-target="#HospitalProject" data-slide-to="6"></li>
+                  <li data-target="#HospitalProject" data-slide-to="7"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/HospitalProject/Departments.png" class="project-image" alt="HospitalProject-Departments">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/TestimonialList1.png" class="project-image" alt="HospitalProject-TestimonialList1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/TestimonialList2.png" class="project-image" alt="HospitalProject-TestimonialList2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/DepartmentsAdmin.png" class="project-image" alt="HospitalProject-DepartmentsAdmin">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/TestimonialsAdmin.png" class="project-image" alt="HospitalProject-TestimonialsAdmin">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/EditTestimonialsAdmin.png" class="project-image" alt="HospitalProject-EditTestimonialsAdmin">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HospitalProject/DeleteTestimonialAdmin.png" class="project-image" alt="HospitalProject-DeleteTestimonialAdmin">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#HospitalProject" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#HospitalProject" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
             <div class="card-body">
               <h5 class="card-title">Hospital Redesign Website</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : HTML, CSS, JQuery, JavaScript,
-                  Bootstrap, C#, MVC.NET, Microsoft SQL Server, Entity
-                  Framework
+                  Technologies Used : <span class="technologies">HTML , CSS , JQuery , JavaScript ,
+                    Bootstrap , C# , MVC.NET , Microsoft SQL Server , Entity
+                    Framework</span>
                 </li>
                 <li class="list-group-item">
                   Worked with a team to redesign a hospital Website.
@@ -240,14 +324,49 @@ if (isset($_POST['sendmessage_button'])) {
               project-card
             ">
           <div class="card-horizontal">
-            <img class="card-img float-left project-image" src="./images/ChopperForce.png" alt="Card image cap" />
+            <div class=" mt-3 workimagecontainer">
+              <div id="ChopperForce" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#ChopperForce" data-slide-to="0" class="active"></li>
+                  <li data-target="#ChopperForce" data-slide-to="1"></li>
+                  <li data-target="#ChopperForce" data-slide-to="2"></li>
+                  <li data-target="#ChopperForce" data-slide-to="3"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/ChopperForce/Login.png" class="project-image" alt="ChooperForce-Login">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/ChopperForce/PersonnelReport.png" class="project-image" alt="ChooperForce-PersonnelReport">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/ChopperForce/PhysicalFitnessReport.png" class="project-image" alt="ChooperForce-PhysicalFitnessReport">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/ChopperForce/Logout.png" class="project-image" alt="ChooperForce-Logout">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#ChopperForce" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#ChopperForce" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
             <div class="card-body">
               <h5 class="card-title">ChopperForceFive</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : HTML, CSS, JavaScript, Bootstrap, PHP,
-                  SQL
+                  Technologies Used : <span class="technologies">HTML , CSS , JavaScript , Bootstrap , PHP ,
+                    SQL</span>
                 </li>
                 <li class="list-group-item">
                   An HR application developed for the us army.
@@ -268,6 +387,248 @@ if (isset($_POST['sendmessage_button'])) {
           </div>
         </div>
         <!-- End of Project 5 -->
+        <!-- Project 6 -->
+        <div class="
+              card
+              row
+              align-items-center
+              justify-content-center
+              project-card
+            ">
+          <div class="card-horizontal">
+            <div class=" mt-3 workimagecontainer">
+              <div id="PassionProject" class="carousel slide" data-ride="carousel">
+
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#PassionProject" data-slide-to="0" class="active"></li>
+                  <li data-target="#PassionProject" data-slide-to="1"></li>
+                  <li data-target="#PassionProject" data-slide-to="2"></li>
+                  <li data-target="#PassionProject" data-slide-to="3"></li>
+                  <li data-target="#PassionProject" data-slide-to="4"></li>
+                  <li data-target="#PassionProject" data-slide-to="5"></li>
+                  <li data-target="#PassionProject" data-slide-to="6"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/MovieBlog/HomePage.png" class="project-image" alt="MovieBlog-HomePage">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/ListMovies.png" class="project-image" alt="MovieBlog-ListMovies">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/ListDirectors.png" class="project-image" alt="MovieBlog-ListDirectors">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/ListActors.png" class="project-image" alt="MovieBlog-ListActors">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/ListGenres.png" class="project-image" alt="MovieBlog-ListGenres">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/MovieDetails.png" class="project-image" alt="MovieBlog-MovieDetails">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/MovieBlog/EditMovie.png" class="project-image" alt="MovieBlog-EditMovie">
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#PassionProject" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#PassionProject" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Movie Blog</h5>
+              <p class="card-text"></p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Technologies Used : <span class="technologies">HTML , CSS , JavaScript , MVC.NET, Entity Framework, C# , SQL ,
+                    SQL</span>
+                </li>
+                <li class="list-group-item">
+                  A fully loaded movie website blog which lets an admin user to Create, Read, Update and Delete Movies and their Actors,
+                  Directors and Genres specific to the movie.
+                </li>
+                <li class="list-group-item">
+                  Implemented a Microsoft SQL database with many to many relationships.
+                </li>
+                <li class="list-group-item">
+                  The website is made with a codefirst approach.
+                </li>
+              </ul>
+              <div class="card-body">
+                <a href="https://github.com/jerrineldo/MovieBlog" class="card-link">GitHub</a>
+                <!-- <a href="https://chopperforce-hr-app.herokuapp.com/Pages/Login.php" class="card-link">Live</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Project 6 -->
+        <!-- Project 7 -->
+        <div class="card row align-items-center justify-content-center project-card">
+          <div class="card-horizontal">
+            <div class="mt-3 workimagecontainer">
+              <div id="HomeGreenery" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#HomeGreenery" data-slide-to="0" class="active"></li>
+                  <li data-target="#HomeGreenery" data-slide-to="1"></li>
+                  <li data-target="#HomeGreenery" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/HomeGreenery/HomeGreenery1.png" class="project-image" alt="HomeGreenery-one" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HomeGreenery/HomeGreenery2.png" class="project-image" alt="HomeGreenery-two" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HomeGreenery/HomeGreenery3.png" class="project-image" alt="HomeGreenery-three" />
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#HomeGreenery" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#HomeGreenery" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Home Greenery</h5>
+              <p class="card-text"></p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Technologies Used : <span class="technologies">HTML , CSS</span>
+                </li>
+                <li class="list-group-item">One of the first web pages I made.</li>
+              </ul>
+              <div class="card-body">
+                <a href="https://github.com/jerrineldo/HomeGreenery" class="card-link">GitHub</a>
+                <a href="https://homegreenery.herokuapp.com/" class="card-link">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of Project 7 -->
+        <!-- Project 8 -->
+        <div class="card row align-items-center justify-content-center project-card">
+          <div class="card-horizontal">
+            <div class="mt-3 workimagecontainer">
+              <div id="HomeGreenery" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#HomeGreenery" data-slide-to="0" class="active"></li>
+                  <li data-target="#HomeGreenery" data-slide-to="1"></li>
+                  <li data-target="#HomeGreenery" data-slide-to="2"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/HomeGreenery/HomeGreenery1.png" class="project-image" alt="HomeGreenery-one" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HomeGreenery/HomeGreenery2.png" class="project-image" alt="HomeGreenery-two" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/HomeGreenery/HomeGreenery3.png" class="project-image" alt="HomeGreenery-three" />
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#HomeGreenery" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#HomeGreenery" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Home Greenery</h5>
+              <p class="card-text"></p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Technologies Used : <span class="technologies">HTML , CSS</span>
+                </li>
+                <li class="list-group-item">One of the first web pages I made.</li>
+              </ul>
+              <div class="card-body">
+                <a href="https://github.com/jerrineldo/HomeGreenery" class="card-link">GitHub</a>
+                <a href="https://homegreenery.herokuapp.com/" class="card-link">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of Project 8 -->
+        <!-- Project 9 -->
+        <div class="card row align-items-center justify-content-center project-card">
+          <div class="card-horizontal">
+            <div class="mt-3 workimagecontainer">
+              <div id="Covid19Tracker" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#Covid19Tracker" data-slide-to="0" class="active"></li>
+                  <li data-target="#Covid19Tracker" data-slide-to="1"></li>
+                </ul>
+
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./images/Covid19Tracker/Covid19Tracker1.png" class="project-image" alt="HomeGreenery-one" />
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./images/Covid19Tracker/Covid19Tracker2.png" class="project-image" alt="HomeGreenery-two" />
+                  </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#Covid19Tracker" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#Covid19Tracker" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">COVID-19 TRACKER</h5>
+              <p class="card-text"></p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  Technologies Used : <span class="technologies">HTML , CSS , Bootstrap, React.js, Covid-19 API</span>
+                </li>
+                <li class="list-group-item">This is an application which helps to track Covid-19 cases accross the world</li>
+                <li class="list-group-item">
+                  The application uses data fetched through an API.
+                </li>
+                <li class="list-group-item">
+                  The application is build with React and Bootstrap, and is responsive accross UI platforms.
+                </li>
+              </ul>
+              <div class="card-body">
+                <a href="https://github.com/jerrineldo/COVID-19Tracker" class="card-link">GitHub</a>
+                <a href="https://jerrins-covid-19-tracker.herokuapp.com/" class="card-link">Live</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of Project 9 -->
       </div>
     </div>
     <!-- End of Project Section -->
