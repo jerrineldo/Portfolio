@@ -34,13 +34,13 @@ if (isset($_POST['sendmessage_button'])) {
   <script type="text/javascript" src="js/script.js"></script>
   <script src="js/typed.js-master/typed.js-master/lib/typed.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title>Jerrin - Web Developer</title>
+  <title>Jerrin Eldo-Web Developer</title>
 </head>
 
 <body>
   <div class="main-container">
     <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
-      <a class="navbar-brand" href="#"><img src="./images/Logos/mainlogo.PNG" /></a>
+      <a class="navbar-brand" href="#"><img src="./images/Logos/main-logo_jerrin.PNG" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -57,17 +57,24 @@ if (isset($_POST['sendmessage_button'])) {
     </nav>
     <!-- <img style = "width: 100%;" src="images/Background.jpg"> -->
     <div class="home-section" id="home-section">
-      <p class="text-lg-left designation">Web Developer</p>
-      <span class="text-slider-items"> Hi There ! I'm Jerrin Eldo., Nice to Meet You! </span>
-      <strong class="text-lg-left text-slider designation mainpage-message"></strong>
-      <ul class="socialsList">
-        <li>
-          <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
-        </li>
-        <li>
-          <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
-        </li>
-      </ul>
+      <div class="container mainpageimagecontainer float-left d-flex flex-row">
+        <img class="img-fluid mainimage" src="./images/Jerrin Eldo Mazhuvancherry.jpg" alt="Chania">
+      </div>
+      <div class="mainpagecontent">
+        <p class="text-lg-left designation">HI THERE ! I'M</p>
+        <h2 class="name">Jerrin Eldo Mazhuvancherry</h2>
+        <p class="smallbio">A Web Developer passionate about creating interactive applications and experiences on the web.</p>
+        <span class="text-slider-items">Web Developer , Full Stack Developer</span>
+        <strong class="text-lg-left text-slider designation mainpage-message"></strong>
+        <ul class="socialsList">
+          <li>
+            <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
+          </li>
+          <li>
+            <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="about-section section flex justify-content-center " id="about-section">
       <div class="sectionhead mx-auto">
@@ -114,17 +121,23 @@ if (isset($_POST['sendmessage_button'])) {
               <h5 class="card-title">TIME MATTERS</h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">Clarion , SQL , C#</span>
+                  Technologies & Softwares Used: <span class="technologies">Clarion , SQL , C# , Microsoft Visual Studio , Urban Turtle for Team Foundation Server</span>
                 </li>
                 <li class="list-group-item">
                   Time Matters is a leading law practice management software,
                   used by thousands of law firms accross U.S and Canada.
                 </li>
                 <li class="list-group-item">
-                  With countless customization options, and features that law
-                  firms use daily, Time Matters makes it easy to create
-                  documents, manage matters, track time, and conduct the
-                  business of law.
+                  Part of an agile development team to make enhancements and bug fixes for the software.
+                </li>
+                <li class="list-group-item">
+                  Involved in Unit Testing and deployment of builds to the corresponding QA teams.
+                </li>
+                <li class="list-group-item">
+                  Involved in monitoring critical production issues and fixing it in less than the stipulated time.
+                </li>
+                <li class="list-group-item">
+                  Analysing client requirements in accordance with the customers using the software, grooming specific tasks and developing them within the featured sprint.
                 </li>
               </ul>
               <div class="card-body">
@@ -147,15 +160,21 @@ if (isset($_POST['sendmessage_button'])) {
               <img class="card-img float-left project-image" src="./images/Cognizant-Logo.jpg" alt="Card image cap" />
             </div>
             <div class="card-body">
-              <h5 class="card-title">Web Applications</h5>
+              <h5 class="card-title">Cognizant Corporate Security Applications</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , Ajax , JavaScript , JQuery , C# ,
+                  Technologies & Softwares Used: <span class="technologies">HTML , CSS , Ajax , JavaScript , JQuery , ASP.NET MVC , C# ,
                     MVC.NET , SQL</span>
                 </li>
                 <li class="list-group-item">
-                  Application were used by our company's internal employees
+                  Active involvement in Major Enhancements/Change Requests
+                </li>
+                <li class="list-group-item">
+                  Experience in trouble shooting/bug fixing, Production Activities and Incident Management Support
+                </li>
+                <li class="list-group-item">
+                  Involved in unit testing and deployment of the product to their respective Dev , SIT and UAT servers
                 </li>
               </ul>
             </div>
@@ -204,20 +223,21 @@ if (isset($_POST['sendmessage_button'])) {
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Restaurant Website</h5>
+              <h5 class="card-title">Aroma Restaurant Website</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , JQuery , JavaScript</span>
+                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , JQuery , JavaScript, VS-Code</span>
                 </li>
                 <li class="list-group-item">
-                  Worked with a team to develop a restaurant Website from
-                  scratch.
+                  Worked with a team to develop a potential restaurant Website.
                 </li>
                 <li class="list-group-item">
-                  I was specifically involved in incorporating a Maps facility
-                  in one of the pages using the Maps API. I also specifically
-                  worked on a game page where the user never wins.
+                  Was specifically involved in incorporating a Maps facility
+                  in one of the pages using the Maps API.
+                </li>
+                <li class="list-group-item">
+                  Worked on a game page where the user never wins using the shuffle algorithum in Javascript.
                 </li>
               </ul>
               <div class="card-body">
@@ -291,21 +311,25 @@ if (isset($_POST['sendmessage_button'])) {
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , JQuery , JavaScript ,
-                    Bootstrap , C# , MVC.NET , Microsoft SQL Server , Entity
+                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , JQuery , JavaScript ,
+                    Bootstrap , C# , MVC.NET , Microsoft SQL Server , Entity , Git
                     Framework</span>
                 </li>
                 <li class="list-group-item">
-                  Worked with a team to redesign a hospital Website.
+                  Worked with a team to redesign a hospital website.
                 </li>
                 <li class="list-group-item">
-                  I was specifically involved in implementing a departments
+                  Was specifically involved in implementing a departments
                   and testimonials feature for the website.
                 </li>
                 <li class="list-group-item">
-                  This was a fully functional website with an inbuild CMS
-                  feature. Admins would have the functionality to do CRUD
-                  operations on all the testimoials in the database.
+                  This was a fully functional website with an inbuild Content Management System.
+                  Admins would have the functionality to do CRUD
+                  operations on all the testimoials in the database. Visitors would be able to view all testimonials in the website.
+                  Visitors who would like to upload or update a testimonial have to log in before making the changes.
+                </li>
+                <li class="list-group-item">
+                  The website was accessible and responsive accross different UI platforms. This was acheived with the help of Bootstrap.
                 </li>
               </ul>
               <div class="card-body">
@@ -365,18 +389,23 @@ if (isset($_POST['sendmessage_button'])) {
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , JavaScript , Bootstrap , PHP ,
-                    SQL</span>
+                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , Ajax , Jquery, JavaScript , Bootstrap , PHP ,
+                    SQL, VS-Code , GIT</span>
                 </li>
                 <li class="list-group-item">
-                  An HR application developed for the us army.
+                  An HR application developed for the us army along with my classmates.
                 </li>
                 <li class="list-group-item">
-                  Implemented A login Functionality for the Application
+                  Implemented a login functionality for the application using PHP session variables.
                 </li>
                 <li class="list-group-item">
-                  Created a Personnel, and Fitness Report pages for the
-                  application
+                  Created a Personnel Report page to track the details of the soldiers working under the officer.
+                </li>
+                <li class="list-group-item">
+                  Created a Fitness Report page to track the fitness levels of soldiers.
+                </li>
+                <li class="list-group-item">
+                  All User Interfaces were made with the help of Bootstrap, which makes the UI screens responsive accross UI platforms.
                 </li>
               </ul>
               <div class="card-body">
@@ -449,18 +478,18 @@ if (isset($_POST['sendmessage_button'])) {
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , JavaScript , MVC.NET, Entity Framework, C# , SQL ,
-                    SQL</span>
+                  Technologies & Softwares Used : <span class="technologies">HTML , CSS , JavaScript , MVC.NET, Visual Studio ,Entity Framework, C# , SQL ,
+                    GIT</span>
                 </li>
                 <li class="list-group-item">
-                  A fully loaded movie website blog which lets an admin user to Create, Read, Update and Delete Movies and their Actors,
+                  A movie website blog which lets an admin user to Create, Read, Update and Delete Movies and their Actors,
                   Directors and Genres specific to the movie.
                 </li>
                 <li class="list-group-item">
-                  Implemented a Microsoft SQL database with many to many relationships.
+                  Implemented a Microsoft SQL database with many to many and one to many entity relationships.
                 </li>
                 <li class="list-group-item">
-                  The website is made with a codefirst approach.
+                  The website is made using the entity framework and code-first approach in Microsoft .NET.
                 </li>
               </ul>
               <div class="card-body">
@@ -475,48 +504,48 @@ if (isset($_POST['sendmessage_button'])) {
         <div class="card row align-items-center justify-content-center project-card">
           <div class="card-horizontal">
             <div class="mt-3 workimagecontainer">
-              <div id="HomeGreenery" class="carousel slide" data-ride="carousel">
+              <div id="TypingGame" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
-                  <li data-target="#HomeGreenery" data-slide-to="0" class="active"></li>
-                  <li data-target="#HomeGreenery" data-slide-to="1"></li>
-                  <li data-target="#HomeGreenery" data-slide-to="2"></li>
+                  <li data-target="#TypingGame" data-slide-to="0" class="active"></li>
+                  <li data-target="#TypingGame" data-slide-to="1"></li>
+                  <li data-target="#TypingGame" data-slide-to="2"></li>
                 </ul>
 
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                   <div class="carousel-item active">
-                    <img src="./images/HomeGreenery/HomeGreenery1.png" class="project-image" alt="HomeGreenery-one" />
+                    <img src="./images/HowFastCanYouType/HomePage1.png" class="project-image" alt="TypingGame-one" />
                   </div>
                   <div class="carousel-item">
-                    <img src="./images/HomeGreenery/HomeGreenery2.png" class="project-image" alt="HomeGreenery-two" />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HomeGreenery/HomeGreenery3.png" class="project-image" alt="HomeGreenery-three" />
+                    <img src="./images/HowFastCanYouType/HomePage2.png" class="project-image" alt="TypingGame-two" />
                   </div>
                 </div>
 
                 <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#HomeGreenery" data-slide="prev">
+                <a class="carousel-control-prev" href="#TypingGame" data-slide="prev">
                   <span class="carousel-control-prev-icon"></span>
                 </a>
-                <a class="carousel-control-next" href="#HomeGreenery" data-slide="next">
+                <a class="carousel-control-next" href="#TypingGame" data-slide="next">
                   <span class="carousel-control-next-icon"></span>
                 </a>
               </div>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Home Greenery</h5>
+              <h5 class="card-title">How Fast Can You Type</h5>
               <p class="card-text"></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS</span>
+                  Technologies & Softwares Used : <span class="technologies">HTML , CSS , Javascript , VS-Code , API</span>
                 </li>
-                <li class="list-group-item">One of the first web pages I made.</li>
+                <li class="list-group-item">This is a game which lets the user know how fast they can type.</li>
+                <li class="list-group-item">Involves a CSS stylesheet which styles the HTML elements.</li>
+                <li class="list-group-item">A javascript page which fetches different quotes with the Javascript Fetch API using the API : ( QUOTE_API_URL )</li>
+                <li class="list-group-item">Involves a timer which keeps track of the time to type a quote.</li>
               </ul>
               <div class="card-body">
-                <a href="https://github.com/jerrineldo/HomeGreenery" class="card-link">GitHub</a>
-                <a href="https://homegreenery.herokuapp.com/" class="card-link">Live</a>
+                <a href="https://github.com/jerrineldo/Typing-Game" class="card-link">GitHub</a>
+                <a href="https://howfastcanyoutype.herokuapp.com/" class="card-link">Live</a>
               </div>
             </div>
           </div>
@@ -724,6 +753,13 @@ if (isset($_POST['sendmessage_button'])) {
             </div>
             <p>XML</p>
           </li>
+          <li>
+            <div class="skillcontainer">
+            <img src="https://img.icons8.com/metro/26/000000/php.png"/>
+            </div>
+            <p>PHP</p>
+          </li>
+          
 
         </ul>
 

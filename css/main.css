@@ -35,13 +35,20 @@ html {
 }
 
 .navbar-brand img {
-  scale: 0.7;
-  height: 44px;
+  scale: 0.9;
+  height: 50px;
   width: 230px;
 }
 
+.mainpageimagecontainer {
+  width: 400px;
+  height: auto;
+  margin-left: 10em;
+  margin-top: 218px;
+}
+
 .home-section {
-  background: url(../images/Background.jpg);
+  background: url(../images/Background-image.jpg);
   height: 700px;
   width: 100%;
   background-attachment: fixed;
@@ -84,22 +91,38 @@ html {
   color: #f2c64d !important;
 }
 
-.designation {
-  color: #f2c64d;
-  font-size: 2em;
-  font-weight: bold;
-  margin-left: 2em;
-  top: 44%;
-  left: 0%;
+.mainpagecontent {
   position: absolute;
+  width: 50%;
+  height: auto;
+  top: 34%;
+  left: 48%;
+  letter-spacing: 1px;
+}
+.name {
+  color: #f2c64d;
+}
+
+.mainimage {
+  border-radius: 10%;
+}
+
+.smallbio {
+  width: 62%;
+  color: white;
+  letter-spacing: 1px;
+}
+.designation {
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .mainpage-message {
-  color: white;
+  color: #f2c64d;
   top: 50%;
-  font-size: 1.5em;
-  margin-left: 2.7em;
-  font-weight: 700;
+  font-size: 2em;
+  font-weight: 400;
 }
 
 .text-slider-items {
@@ -114,7 +137,7 @@ html {
   background-attachment: fixed;
   background-size: cover;
   padding: 50px;
-  padding-top: 70px !important;
+  padding-top: 75px !important;
 }
 
 .set-width {
@@ -123,11 +146,9 @@ html {
 
 .socialsList {
   display: inline-block;
-  top: 20em;
+  top: 14em;
   position: absolute;
-  display: inline-block;
-  right: 50px;
-  width: 250px;
+  right: 31em;
 }
 .socialsList li {
   list-style: none;
@@ -231,12 +252,13 @@ html {
 .card-body h5 {
   font-weight: bold;
   letter-spacing: 1px;
-  margin-top: 3px;
+  margin-top: 6px;
 }
 
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
+  width: 100%;
 }
 
 .skillsgrid li {
