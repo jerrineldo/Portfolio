@@ -364,6 +364,15 @@ html {
   letter-spacing: 1px;
 }
 
+@media only screen and (max-width: 900px) {
+  .mainpageimagecontainer {
+    width: 300px;
+    margin-left: 6em;
+  }
+  .mainpagecontent{
+    top: 22%;
+  }
+}
 @media only screen and (max-width: 768px) {
   .mainpageimagecontainer {
     width: 300px;
