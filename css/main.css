@@ -369,7 +369,7 @@ html {
     width: 300px;
     margin-left: 6em;
   }
-  .mainpagecontent{
+  .mainpagecontent {
     top: 22%;
   }
 }
@@ -421,6 +421,19 @@ html {
   }
 }
 
+@media only screen and (max-width: 420px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+  .mainpageimagecontainer {
+    margin-left: 2.5em;
+    margin-top: 117px;
+  }
+  .workimagecontainer {
+    width: 170px;
+    height: 200px;
+  }
+}
 @media only screen and (max-width: 400px) {
   .card-horizontal {
     flex-direction: column;
