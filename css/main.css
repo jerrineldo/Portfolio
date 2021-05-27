@@ -146,9 +146,10 @@ html {
 
 .socialsList {
   display: inline-block;
-  top: 14em;
+  top: 14.5em;
   position: absolute;
-  right: 31em;
+  right: 0em;
+  width: 100%;
 }
 .socialsList li {
   list-style: none;
@@ -361,4 +362,95 @@ html {
   margin: 10px 0;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 768px) {
+  .mainpageimagecontainer {
+    width: 300px;
+    height: auto;
+    margin-left: 2em;
+    margin-top: 218px;
+  }
+
+  .smallbio {
+    width: 100%;
+  }
+
+  .designation {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  .name {
+    font-size: 1.4em;
+    margin-bottom: 0.3rem !important;
+    margin-top: 0.3rem !important;
+  }
+  .mainpagecontent {
+    top: 22%;
+  }
+  .socialsList {
+    width: 100%;
+    top: 11em;
+    right: 0;
+  }
+
+  .socialsList li img {
+    width: 40px;
+  }
+
+  .icon {
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .set-width {
+    width: 100%;
+  }
+
+  .resume-width {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+  .mainpageimagecontainer {
+    margin-left: 2.5em;
+    margin-top: 117px;
+  }
+  .workimagecontainer {
+    width: 170px;
+    height: 200px;
+  }
+  .list-group-item {
+    margin-right: 0;
+  }
+  .skillsgrid {
+    padding-left: 0;
+  }
+  .card-body {
+    width: 100%;
+  }
+
+  .resume-width {
+    width: 320px;
+    height: 900px;
+    margin-left: -20px;
+  }
+
+  .smallbio {
+    width: 100%;
+  }
+  .mainpagecontent {
+    top: 50%;
+    margin-left: 37px;
+    width: 90%;
+    left: 0;
+  }
+  .about-description {
+    width: 100%;
+    padding: 1rem;
+  }
 }

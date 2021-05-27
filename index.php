@@ -60,17 +60,17 @@ if (isset($_POST['sendmessage_button'])) {
       <div class="container mainpageimagecontainer float-left d-flex flex-row">
         <img class="img-fluid mainimage" src="./images/Jerrin Eldo Mazhuvancherry.jpg" alt="Chania">
       </div>
-      <div class="mainpagecontent">
-        <p class="text-lg-left designation">HI THERE ! I'M</p>
-        <h2 class="name">Jerrin Eldo Mazhuvancherry</h2>
-        <p class="smallbio">A Web Developer passionate about creating interactive applications and experiences on the web.</p>
+      <div class="mainpagecontent col">
+        <p class="text-lg-left designation row">HI THERE ! I'M</p>
+        <h2 class="name row">Jerrin Eldo Mazhuvancherry</h2>
+        <p class="smallbio row">A Web Developer passionate about creating interactive applications and experiences on the web.</p>
         <span class="text-slider-items">Web Developer , Full Stack Developer</span>
         <strong class="text-lg-left text-slider designation mainpage-message"></strong>
-        <ul class="socialsList">
-          <li>
+        <ul class="socialsList row">
+          <li class="col-md-8">
             <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
           </li>
-          <li>
+          <li class="col-md-8">
             <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
           </li>
         </ul>
@@ -813,7 +813,7 @@ if (isset($_POST['sendmessage_button'])) {
         <h2>RESUME</h2>
       </div>
       <div class="mx-auto">
-        <embed src="JerrinResume.pdf" width="1000px" height="2100px" />
+        <embed class="resume-width" src="JerrinResume.pdf" width="1000px" height="2100px" />
       </div>
     </div>
     <!-- End of Contact section -->
