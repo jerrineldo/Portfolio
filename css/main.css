@@ -145,11 +145,14 @@ html {
 }
 
 .socialsList {
+  margin-top: 10px;
+  position: relative;
+  right: 0em !important;
+  width: 100% !important;
+}
+
+.socialsList ul{
   display: inline-block;
-  top: 14.5em;
-  position: absolute;
-  right: 0em;
-  width: 100%;
 }
 .socialsList li {
   list-style: none;
@@ -399,7 +402,6 @@ html {
   }
   .socialsList {
     width: 100%;
-    top: 11em;
     right: 0;
   }
 

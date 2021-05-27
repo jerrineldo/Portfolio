@@ -61,19 +61,21 @@ if (isset($_POST['sendmessage_button'])) {
         <img class="img-fluid mainimage" src="./images/Jerrin Eldo Mazhuvancherry.jpg" alt="Chania">
       </div>
       <div class="mainpagecontent col">
-        <p class="text-lg-left designation row">HI THERE ! I'M</p>
+        <p class="text-lg-left designation row">Hi there ! I'm</p>
         <h2 class="name row">Jerrin Eldo Mazhuvancherry</h2>
         <p class="smallbio row">A Web Developer passionate about creating interactive applications and experiences on the web.</p>
         <span class="text-slider-items">Web Developer , Full Stack Developer</span>
         <strong class="text-lg-left text-slider designation mainpage-message"></strong>
-        <ul class="socialsList row">
-          <li class="col-md-8">
-            <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
-          </li>
-          <li class="col-md-8">
-            <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
-          </li>
-        </ul>
+        <div class="socialsList">
+          <ul class="row">
+            <li class="col-md-8">
+              <a href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" /></a>
+            </li>
+            <li class="col-md-8">
+              <a href="https://github.com/jerrineldo" class="icon" target="_blank" rel="noopener noreferrer"><img class="icon" src="./images/icons/github.svg" /></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="about-section section flex justify-content-center " id="about-section">
@@ -593,7 +595,8 @@ if (isset($_POST['sendmessage_button'])) {
                 <li class="list-group-item">
                   Technologies Used : <span class="technologies">HTML , CSS</span>
                 </li>
-                <li class="list-group-item">One of the first web pages I made.</li>
+                <li class="list-group-item">This is a simple HTML page made with HTML and CSS.</li>
+                <li class="list-group-item">I have put this here mainly to showcase my first web page in my student life at Humber.</li>
               </ul>
               <div class="card-body">
                 <a href="https://github.com/jerrineldo/HomeGreenery" class="card-link">GitHub</a>
@@ -755,11 +758,11 @@ if (isset($_POST['sendmessage_button'])) {
           </li>
           <li>
             <div class="skillcontainer">
-            <img src="https://img.icons8.com/metro/26/000000/php.png"/>
+              <img src="https://img.icons8.com/metro/26/000000/php.png" />
             </div>
             <p>PHP</p>
           </li>
-          
+
 
         </ul>
 
