@@ -421,7 +421,7 @@ html {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 440px) {
   .card-horizontal {
     flex-direction: column;
   }
@@ -432,6 +432,35 @@ html {
   .workimagecontainer {
     width: 170px;
     height: 200px;
+  }
+  .list-group-item {
+    margin-right: 0;
+  }
+  .skillsgrid {
+    padding-left: 0;
+  }
+  .card-body {
+    width: 100%;
+  }
+
+  .resume-width {
+    width: 320px;
+    height: 900px;
+    margin-left: -20px;
+  }
+
+  .smallbio {
+    width: 100%;
+  }
+  .mainpagecontent {
+    top: 50%;
+    margin-left: 37px;
+    width: 90%;
+    left: 0;
+  }
+  .about-description {
+    width: 100%;
+    padding: 1rem;
   }
 }
 @media only screen and (max-width: 400px) {
