@@ -1,5 +1,12 @@
 <?php
 
+require_once './models/projects.php';
+require_once './models/database.php';
+
+$db = DatabaseContext::dbConnect();
+$ProjectDto = new Project();
+$projectList = $ProjectDto->getallProjects($db);
+
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -34,7 +41,7 @@ if (isset($_POST['sendmessage_button'])) {
   <script type="text/javascript" src="js/script.js"></script>
   <script src="js/typed.js-master/typed.js-master/lib/typed.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <title>Jerrin Eldo-Web Developer</title>
+  <title>Jerrin Eldo</title>
 </head>
 
 <body>
@@ -51,20 +58,19 @@ if (isset($_POST['sendmessage_button'])) {
           <a class="nav-item nav-link" href="#projects-section">Projects</a>
           <a class="nav-item nav-link" href="#skill-section">Skills</a>
           <a class="nav-item nav-link" href="#contact-section">Contact</a>
-          <a class="nav-item nav-link" href="#resume-section">Resume</a>
         </div>
       </div>
     </nav>
     <!-- <img style = "width: 100%;" src="images/Background.jpg"> -->
     <div class="home-section" id="home-section">
-      <div class="container mainpageimagecontainer float-left d-flex flex-row">
-        <img class="img-fluid mainimage" src="./images/Jerrin Eldo Mazhuvancherry.jpg" alt="Chania">
+      <div class="container mainpageimagecontainer float-left">
+        <img class="img-fluid mainimage" src="./images/Jerrin Eldo Mazhuvancherry.jpg" alt="Jerrin's Profile Picture">
       </div>
       <div class="mainpagecontent col">
         <p class="text-lg-left designation row">Hi there ! I'm</p>
         <h2 class="name row">Jerrin Eldo Mazhuvancherry</h2>
         <p class="smallbio row">A Web Developer passionate about creating interactive applications and experiences on the web.</p>
-        <span class="text-slider-items">Web Developer , Full Stack Developer</span>
+        <span class="text-slider-items">Web Developer</span>
         <strong class="text-lg-left text-slider designation mainpage-message"></strong>
         <div class="socialsList">
           <ul class="row">
@@ -98,6 +104,9 @@ if (isset($_POST['sendmessage_button'])) {
           solving problems through code, and I am excited to work alongside
           other amazing programmers and learn so much more!
         </p>
+        <div class="row justify-content-center mt-4">
+          <a href="https://jerrinthedeveloper.tech/media/Jerrin-Resume.pdf" class="btn download_resume">Download Resume</a>
+        </div>
       </div>
     </div>
     <!-- Start of Project Section -->
@@ -106,562 +115,74 @@ if (isset($_POST['sendmessage_button'])) {
         <span>TAKE A LOOK AT MY</span>
         <h2>PROJECTS</h2>
       </div>
-      <div class="jumbotron my-auto set-width project-jumbotron">
-        <!-- Project 1  -->
-        <div class="
+      <?php foreach ($projectList as $Project) { ?>
+        <div class="jumbotron mb-4 set-width project-jumbotron">
+          <!-- Project 1  -->
+          <div class="
               card
               row
               align-items-center
               justify-content-center
               project-card
             ">
-          <div class="card-horizontal">
-            <div class="workimagecontainer">
-              <img class="card-img float-left project-image" src="./images/TimeMatters-Logo.jpg" alt="Card image cap" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">TIME MATTERS</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies & Softwares Used: <span class="technologies">Clarion , SQL , C# , Microsoft Visual Studio , Urban Turtle for Team Foundation Server</span>
-                </li>
-                <li class="list-group-item">
-                  Time Matters is a leading law practice management software,
-                  used by thousands of law firms accross U.S and Canada.
-                </li>
-                <li class="list-group-item">
-                  Part of an agile development team to make enhancements and bug fixes for the software.
-                </li>
-                <li class="list-group-item">
-                  Involved in Unit Testing and deployment of builds to the corresponding QA teams.
-                </li>
-                <li class="list-group-item">
-                  Involved in monitoring critical production issues and fixing it in less than the stipulated time.
-                </li>
-                <li class="list-group-item">
-                  Analysing client requirements in accordance with the customers using the software, grooming specific tasks and developing them within the featured sprint.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://pclawtimematters.ca/timematters/" class="card-link">Official Website</a>
+            <div class="card-horizontal">
+              <div class="mt-3 workimagecontainer">
+                <div id="<?php echo $Project->carouselId ?>" class="carousel slide" data-ride="carousel">
+                  <?php
+                  $dir = "./images/" . $Project->carouselId . "/*.png";
+                  $images = glob($dir);
+                  ?>
+                  <!-- Indicators -->
+                  <ul class="carousel-indicators">
+                    <?php
+                    for ($x = 0; $x < count($images); $x++) {
+                      echo "<li data-target='#" . $Project->carouselId . "' data-slide-to='" . $x . "'></li>";
+                    }
+                    ?>
+                  </ul>
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                    <?php
+                    foreach ($images as $image) :
+                      echo "<div class='carousel-item'>
+                              <img class='project-image' src='" . $image . "' alt='Card image cap' />
+                            </div>";
+                    //echo $image;
+                    endforeach;
+                    ?>
+                  </div>
+                  <!-- Left and right controls -->
+                  <a class="carousel-control-prev" href="#<?php echo $Project->carouselId ?>" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#<?php echo $Project->carouselId ?>" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                  </a>
+
+                  <!-- <img class="card-img float-left project-image" src="./images/TimeMatters-Logo.jpg" alt="Card image cap" /> -->
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of Project 1 -->
-        <!-- Project 2  -->
-        <div class="
-              card
-              row
-              align-items-center
-              justify-content-center
-              project-card
-            ">
-          <div class="card-horizontal">
-            <div class="workimagecontainer">
-              <img class="card-img float-left project-image" src="./images/Cognizant-Logo.jpg" alt="Card image cap" />
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Cognizant Corporate Security Applications</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies & Softwares Used: <span class="technologies">HTML , CSS , Ajax , JavaScript , JQuery , ASP.NET MVC , C# ,
-                    MVC.NET , SQL</span>
-                </li>
-                <li class="list-group-item">
-                  Active involvement in Major Enhancements/Change Requests
-                </li>
-                <li class="list-group-item">
-                  Experience in trouble shooting/bug fixing, Production Activities and Incident Management Support
-                </li>
-                <li class="list-group-item">
-                  Involved in unit testing and deployment of the product to their respective Dev , SIT and UAT servers
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!-- End of Project 2 -->
-        <!-- Project 3  -->
-        <div class="
-              card
-              row
-              align-items-center
-              justify-content-center
-              project-card
-            ">
-          <div class="card-horizontal">
-            <div class=" mt-3 workimagecontainer">
-              <div id="RestaurantWebsite" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#RestaurantWebsite" data-slide-to="0" class="active"></li>
-                  <li data-target="#RestaurantWebsite" data-slide-to="1"></li>
-                  <li data-target="#RestaurantWebsite" data-slide-to="2"></li>
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $Project->project_name ?></h5>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    Technologies & Softwares Used: <span class="technologies"><?php echo $Project->technologies ?></span>
+                  </li>
+                  <li class="list-group-item">
+                    <?php echo $Project->project_description ?>
+                  </li>
                 </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/RestaurantAroma/AromaHomePage.png" class="project-image" alt="AromaRestaurant-HomePage">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/RestaurantAroma/LocationPage.png" class="project-image" alt="AromaRestaurant-LocationPage">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/RestaurantAroma/GamePage.png" class="project-image" alt="ChooperForce-GamePage">
+                <div class="card-body">
+                  <div class="row justify-content-around">
+                    <a href="<?php echo $Project->github ?>" class="btn card-link sendmessage_button col-3 col-sm-8 col-md-3 col-lg-2">GitHub</a>
+                    <a href="<?php echo $Project->live_link ?>" class="btn  card-link sendmessage_button col-3 col-sm-8 col-md-3 col-lg-2">Live</a>
                   </div>
                 </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#RestaurantWebsite" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#RestaurantWebsite" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Aroma Restaurant Website</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , JQuery , JavaScript, VS-Code</span>
-                </li>
-                <li class="list-group-item">
-                  Worked with a team to develop a potential restaurant Website.
-                </li>
-                <li class="list-group-item">
-                  Was specifically involved in incorporating a Maps facility
-                  in one of the pages using the Maps API.
-                </li>
-                <li class="list-group-item">
-                  Worked on a game page where the user never wins using the shuffle algorithum in Javascript.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://aromarestaurant.herokuapp.com/" class="card-link">Live</a>
-                <a href="https://github.com/jerrineldo/RestaurantProject" class="card-link">Github</a>
               </div>
             </div>
           </div>
         </div>
-        <!-- End of Project 3 -->
-        <!-- Project 4  -->
-        <div class="
-              card
-              row
-              align-items-center
-              justify-content-center
-              project-card
-            ">
-          <div class="card-horizontal">
-            <div class=" mt-3 workimagecontainer">
-              <div id="HospitalProject" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#HospitalProject" data-slide-to="0" class="active"></li>
-                  <li data-target="#HospitalProject" data-slide-to="1"></li>
-                  <li data-target="#HospitalProject" data-slide-to="2"></li>
-                  <li data-target="#HospitalProject" data-slide-to="3"></li>
-                  <li data-target="#HospitalProject" data-slide-to="4"></li>
-                  <li data-target="#HospitalProject" data-slide-to="5"></li>
-                  <li data-target="#HospitalProject" data-slide-to="6"></li>
-                  <li data-target="#HospitalProject" data-slide-to="7"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/HospitalProject/Departments.png" class="project-image" alt="HospitalProject-Departments">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/TestimonialList1.png" class="project-image" alt="HospitalProject-TestimonialList1">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/TestimonialList2.png" class="project-image" alt="HospitalProject-TestimonialList2">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/DepartmentsAdmin.png" class="project-image" alt="HospitalProject-DepartmentsAdmin">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/TestimonialsAdmin.png" class="project-image" alt="HospitalProject-TestimonialsAdmin">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/EditTestimonialsAdmin.png" class="project-image" alt="HospitalProject-EditTestimonialsAdmin">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HospitalProject/DeleteTestimonialAdmin.png" class="project-image" alt="HospitalProject-DeleteTestimonialAdmin">
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#HospitalProject" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#HospitalProject" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Hospital Redesign Website</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , JQuery , JavaScript ,
-                    Bootstrap , C# , MVC.NET , Microsoft SQL Server , Entity , Git
-                    Framework</span>
-                </li>
-                <li class="list-group-item">
-                  Worked with a team to redesign a hospital website.
-                </li>
-                <li class="list-group-item">
-                  Was specifically involved in implementing a departments
-                  and testimonials feature for the website.
-                </li>
-                <li class="list-group-item">
-                  This was a fully functional website with an inbuild Content Management System.
-                  Admins would have the functionality to do CRUD
-                  operations on all the testimoials in the database. Visitors would be able to view all testimonials in the website.
-                  Visitors who would like to upload or update a testimonial have to log in before making the changes.
-                </li>
-                <li class="list-group-item">
-                  The website was accessible and responsive accross different UI platforms. This was acheived with the help of Bootstrap.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/HospitalProject" class="card-link">Github</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of Project 4 -->
-        <!-- Project 5  -->
-        <div class="
-              card
-              row
-              align-items-center
-              justify-content-center
-              project-card
-            ">
-          <div class="card-horizontal">
-            <div class=" mt-3 workimagecontainer">
-              <div id="ChopperForce" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#ChopperForce" data-slide-to="0" class="active"></li>
-                  <li data-target="#ChopperForce" data-slide-to="1"></li>
-                  <li data-target="#ChopperForce" data-slide-to="2"></li>
-                  <li data-target="#ChopperForce" data-slide-to="3"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/ChopperForce/Login.png" class="project-image" alt="ChooperForce-Login">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/ChopperForce/PersonnelReport.png" class="project-image" alt="ChooperForce-PersonnelReport">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/ChopperForce/PhysicalFitnessReport.png" class="project-image" alt="ChooperForce-PhysicalFitnessReport">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/ChopperForce/Logout.png" class="project-image" alt="ChooperForce-Logout">
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#ChopperForce" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#ChopperForce" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">ChopperForceFive</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies and Softwares Used : <span class="technologies">HTML , CSS , Ajax , Jquery, JavaScript , Bootstrap , PHP ,
-                    SQL, VS-Code , GIT</span>
-                </li>
-                <li class="list-group-item">
-                  An HR application developed for the us army along with my classmates.
-                </li>
-                <li class="list-group-item">
-                  Implemented a login functionality for the application using PHP session variables.
-                </li>
-                <li class="list-group-item">
-                  Created a Personnel Report page to track the details of the soldiers working under the officer.
-                </li>
-                <li class="list-group-item">
-                  Created a Fitness Report page to track the fitness levels of soldiers.
-                </li>
-                <li class="list-group-item">
-                  All User Interfaces were made with the help of Bootstrap, which makes the UI screens responsive accross UI platforms.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/ChopperForce" class="card-link">GitHub</a>
-                <a href="https://chopperforce-hr-app.herokuapp.com/Pages/Login.php" class="card-link">Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of Project 5 -->
-        <!-- Project 6 -->
-        <div class="
-              card
-              row
-              align-items-center
-              justify-content-center
-              project-card
-            ">
-          <div class="card-horizontal">
-            <div class=" mt-3 workimagecontainer">
-              <div id="PassionProject" class="carousel slide" data-ride="carousel">
-
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#PassionProject" data-slide-to="0" class="active"></li>
-                  <li data-target="#PassionProject" data-slide-to="1"></li>
-                  <li data-target="#PassionProject" data-slide-to="2"></li>
-                  <li data-target="#PassionProject" data-slide-to="3"></li>
-                  <li data-target="#PassionProject" data-slide-to="4"></li>
-                  <li data-target="#PassionProject" data-slide-to="5"></li>
-                  <li data-target="#PassionProject" data-slide-to="6"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/MovieBlog/HomePage.png" class="project-image" alt="MovieBlog-HomePage">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/ListMovies.png" class="project-image" alt="MovieBlog-ListMovies">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/ListDirectors.png" class="project-image" alt="MovieBlog-ListDirectors">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/ListActors.png" class="project-image" alt="MovieBlog-ListActors">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/ListGenres.png" class="project-image" alt="MovieBlog-ListGenres">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/MovieDetails.png" class="project-image" alt="MovieBlog-MovieDetails">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/MovieBlog/EditMovie.png" class="project-image" alt="MovieBlog-EditMovie">
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#PassionProject" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#PassionProject" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Movie Blog</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies & Softwares Used : <span class="technologies">HTML , CSS , JavaScript , MVC.NET, Visual Studio ,Entity Framework, C# , SQL ,
-                    GIT</span>
-                </li>
-                <li class="list-group-item">
-                  A movie website blog which lets an admin user to Create, Read, Update and Delete Movies and their Actors,
-                  Directors and Genres specific to the movie.
-                </li>
-                <li class="list-group-item">
-                  Implemented a Microsoft SQL database with many to many and one to many entity relationships.
-                </li>
-                <li class="list-group-item">
-                  The website is made using the entity framework and code-first approach in Microsoft .NET.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/MovieBlog" class="card-link">GitHub</a>
-                <!-- <a href="https://chopperforce-hr-app.herokuapp.com/Pages/Login.php" class="card-link">Live</a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- End of Project 6 -->
-        <!-- Project 7 -->
-        <div class="card row align-items-center justify-content-center project-card">
-          <div class="card-horizontal">
-            <div class="mt-3 workimagecontainer">
-              <div id="TypingGame" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#TypingGame" data-slide-to="0" class="active"></li>
-                  <li data-target="#TypingGame" data-slide-to="1"></li>
-                  <li data-target="#TypingGame" data-slide-to="2"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/HowFastCanYouType/HomePage1.png" class="project-image" alt="TypingGame-one" />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HowFastCanYouType/HomePage2.png" class="project-image" alt="TypingGame-two" />
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#TypingGame" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#TypingGame" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">How Fast Can You Type</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies & Softwares Used : <span class="technologies">HTML , CSS , Javascript , VS-Code , API</span>
-                </li>
-                <li class="list-group-item">This is a game which lets the user know how fast they can type.</li>
-                <li class="list-group-item">Involves a CSS stylesheet which styles the HTML elements.</li>
-                <li class="list-group-item">A javascript page which fetches different quotes with the Javascript Fetch API using the API : ( QUOTE_API_URL )</li>
-                <li class="list-group-item">Involves a timer which keeps track of the time to type a quote.</li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/Typing-Game" class="card-link">GitHub</a>
-                <a href="https://howfastcanyoutype.herokuapp.com/" class="card-link">Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- End of Project 7 -->
-        <!-- Project 8 -->
-        <div class="card row align-items-center justify-content-center project-card">
-          <div class="card-horizontal">
-            <div class="mt-3 workimagecontainer">
-              <div id="HomeGreenery" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#HomeGreenery" data-slide-to="0" class="active"></li>
-                  <li data-target="#HomeGreenery" data-slide-to="1"></li>
-                  <li data-target="#HomeGreenery" data-slide-to="2"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/HomeGreenery/HomeGreenery1.png" class="project-image" alt="HomeGreenery-one" />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HomeGreenery/HomeGreenery2.png" class="project-image" alt="HomeGreenery-two" />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/HomeGreenery/HomeGreenery3.png" class="project-image" alt="HomeGreenery-three" />
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#HomeGreenery" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#HomeGreenery" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Home Greenery</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS</span>
-                </li>
-                <li class="list-group-item">This is a simple HTML page made with HTML and CSS.</li>
-                <li class="list-group-item">I have put this here mainly to showcase my first web page in my student life at Humber.</li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/HomeGreenery" class="card-link">GitHub</a>
-                <a href="https://homegreenery.herokuapp.com/" class="card-link">Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- End of Project 8 -->
-        <!-- Project 9 -->
-        <div class="card row align-items-center justify-content-center project-card">
-          <div class="card-horizontal">
-            <div class="mt-3 workimagecontainer">
-              <div id="Covid19Tracker" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#Covid19Tracker" data-slide-to="0" class="active"></li>
-                  <li data-target="#Covid19Tracker" data-slide-to="1"></li>
-                </ul>
-
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="./images/Covid19Tracker/Covid19Tracker1.png" class="project-image" alt="HomeGreenery-one" />
-                  </div>
-                  <div class="carousel-item">
-                    <img src="./images/Covid19Tracker/Covid19Tracker2.png" class="project-image" alt="HomeGreenery-two" />
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#Covid19Tracker" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#Covid19Tracker" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">COVID-19 TRACKER</h5>
-              <p class="card-text"></p>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Technologies Used : <span class="technologies">HTML , CSS , Bootstrap, React.js, Covid-19 API</span>
-                </li>
-                <li class="list-group-item">This is an application which helps to track Covid-19 cases accross the world</li>
-                <li class="list-group-item">
-                  The application uses data fetched through an API.
-                </li>
-                <li class="list-group-item">
-                  The application is build with React and Bootstrap, and is responsive accross UI platforms.
-                </li>
-              </ul>
-              <div class="card-body">
-                <a href="https://github.com/jerrineldo/COVID-19Tracker" class="card-link">GitHub</a>
-                <a href="https://jerrins-covid-19-tracker.herokuapp.com/" class="card-link">Live</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- End of Project 9 -->
-      </div>
+      <?php } ?>
     </div>
     <!-- End of Project Section -->
     <!-- Start of skill Section -->
@@ -799,8 +320,8 @@ if (isset($_POST['sendmessage_button'])) {
 <?php echo isset($_POST['contactsection_message']) ? $_POST['contactsection_message'] : ''; ?></textarea>
               <div class="invalid-feedback">Please enter a message.</div>
             </div>
-            <div class="form-group col-md-3 mx-auto">
-              <button name="sendmessage_button" type="submit" class="btn sendmessage_button mx-auto form-control">
+            <div class="form-group col-8 col-md-4 col-xl-4 mx-auto">
+              <button name="sendmessage_button" type="submit" class="btn sendmessage_button form-control ">
                 Send a Message
               </button>
             </div>
@@ -809,17 +330,6 @@ if (isset($_POST['sendmessage_button'])) {
       </div>
     </div>
     <!-- End of Contact Section -->
-    <!-- Resume Section -->
-    <div class="resume-section section d-flex flex-column justify-content-center" id="resume-section">
-      <div class="sectionhead mx-auto">
-        <span>Take a look at my</span>
-        <h2>RESUME</h2>
-      </div>
-      <div class="mx-auto">
-        <embed class="resume-width" src="JerrinResume.pdf" width="1000px" height="2100px" />
-      </div>
-    </div>
-    <!-- End of Contact section -->
     <!-- Footer -->
     <footer class="page-footer font-small unique-color-dark pt-2 main-footer">
       <!-- Footer Elements -->
@@ -828,7 +338,7 @@ if (isset($_POST['sendmessage_button'])) {
         <ul class="list-unstyled list-inline text-center mb-0">
           <li class="list-inline-item">
             <a class="btn-floating btn-fb mx-1" href="https://www.facebook.com/jerrineldo/">
-              <img src="https://img.icons8.com/cute-clipart/64/000000/facebook-new.png" />
+              <img src="https://img.icons8.com/android/24/4a90e2/facebook-new.png" />
             </a>
           </li>
           <li class="list-inline-item">
@@ -843,7 +353,7 @@ if (isset($_POST['sendmessage_button'])) {
           </li>
           <li class="list-inline-item">
             <a class="btn-floating btn-li mx-1" href="https://www.linkedin.com/in/jerrin-eldo-mazhuvancherry-p/">
-              <img src="https://img.icons8.com/cute-clipart/64/000000/linkedin.png" />
+              <img src="https://img.icons8.com/fluent/48/26e07f/linkedin.png" />
             </a>
           </li>
         </ul>

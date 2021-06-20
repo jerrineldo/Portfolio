@@ -16,6 +16,10 @@ $(document).ready(function () {
     });
   }
 
+  $(".carousel-inner").each(function () {
+    $(this).find(".carousel-item").first().addClass("active");
+  });
+
   var forms = document.getElementsByClassName("needs-validation");
 
   var email = document.getElementById("contact-section_email");
@@ -55,25 +59,6 @@ $(document).ready(function () {
       console.log("Jerrin");
       return false;
     } else {
-      // alert("Hi");
-      // $.ajax({
-
-      //   url: 'sendEmail.php',
-      //   type: 'POST',
-      //   datatype: 'json',
-      //   data :{
-      //     name: name.value,
-      //     email: email.value,
-      //     subject: subject.value,
-      //     message: message.value
-      //   }, success: function(response){
-      //     alert("Hicdac");
-      //     $('#contactform')[0].reset();
-      //     $(".sent-notification").text("Message sent sucessfully");
-      //   }
-
-      // });
-      // alert("Here");
       $("#contactsection_email").next().hide();
       $("#contactsection_email").css("border-color", "green");
     }

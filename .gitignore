@@ -1,0 +1,6 @@
+.vscode/*
+.idea/*
+
+database.php
+
+SendEmail.php
