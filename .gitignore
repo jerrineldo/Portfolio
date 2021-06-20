@@ -1,6 +1,6 @@
 .vscode/*
 .idea/*
 
-/database.php*
+/database.php
 
-/SendEmail.php*
+/SendEmail.php
